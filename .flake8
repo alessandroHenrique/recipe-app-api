@@ -3,4 +3,6 @@ exclude =
     migrations
     __pycache__,
     manage.py,
-    settings.py
+    base.py,
+    local.py,
+    production.py
