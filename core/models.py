@@ -8,6 +8,7 @@ class UserManager(BaseUserManager):
     def create_user(self, email, password=None, name='', **kwargs):
         user = self.model(
             email=self.normalize_email(email),
+            name=name,
             **kwargs
         )
         user.set_password(password)
@@ -32,6 +33,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
+
+    def get_full_name(self):
+        """Retrieve full name of user"""
+        return self.name
+
+    def get_short_name(self):
+        """Retrieve short name of user"""
+        return self.name
 
     def __str__(self):
         """Return string representation of user"""
