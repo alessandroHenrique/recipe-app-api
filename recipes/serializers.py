@@ -8,3 +8,10 @@ class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Tag
         fields = ('id', 'name')
+
+
+class IngredientSerializer(serializers.ModelSerializer):
+    """Serializer for ingredient objects"""
+    class Meta:
+        model = models.Ingredient
+        fields = ('id', 'name')
