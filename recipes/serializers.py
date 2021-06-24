@@ -21,11 +21,13 @@ class RecipeSerializer(serializers.ModelSerializer):
     """Serialize a recipe"""
     ingredients = serializers.PrimaryKeyRelatedField(
         many=True,
-        read_only=True
+        # read_only=True
+        queryset=models.Ingredient.objects.all()
     )
     tags = serializers.PrimaryKeyRelatedField(
         many=True,
-        read_only=True
+        # read_only=True
+        queryset=models.Tag.objects.all()
     )
 
     class Meta:

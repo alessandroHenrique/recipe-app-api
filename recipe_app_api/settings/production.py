@@ -2,8 +2,8 @@ from recipe_app_api.settings.base import *
 from decouple import config
 
 
-DEBUG = False
-# DEBUG = True
+# DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 DATABASES = {
